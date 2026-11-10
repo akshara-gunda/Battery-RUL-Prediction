@@ -1,0 +1,77 @@
+# ============================================================================
+# Python-generated files
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ============================================================================
+# Virtual environments
+# ============================================================================
+.venv/
+venv/
+ENV/
+env/
+
+# ============================================================================
+# Operating system / editor files
+# ============================================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# Jupyter notebooks
+# ============================================================================
+.ipynb_checkpoints/
+
+# ============================================================================
+# Testing / coverage / linting
+# ============================================================================
+.pytest_cache/
+.mypy_cache/
+.tox/
+.coverage
+htmlcov/
+
+# ============================================================================
+# Logs and environment files
+# ============================================================================
+*.log
+logs/
+.env
+.env.local
+.env.*.local
+
+# ============================================================================
+# Battery RUL project - large data / model outputs (DO NOT commit to git)
+# ============================================================================
+# Trained model binaries (pickles are huge and binary - use Git LFS or DVC if
+# you need to version them). Currently >300 MB combined in this repo.
+models/*.pkl
+models/*.h5
+models/*.pt
+models/*.bin
+
+# Prediction / evaluation CSVs and images (keep small metric CSVs if desired
+# with `git add -f reports/<file>.csv`)
+reports/*.csv
+reports/*.png
+
+# Master / processed datasets (version with DVC or Git LFS instead of plain git)
+Datasets/*.csv
+Datasets/**/*.csv
+
+# NOTE: pyproject.toml, requirements.txt and uv.lock are intentionally NOT
+# ignored - they are small text files and should be committed.
+# .python-version is also intentionally NOT ignored (tiny, pins the interpreter).

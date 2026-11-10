@@ -1,0 +1,62 @@
+{
+  "created_at_utc": "2026-10-07T14:10:52.433990+00:00",
+  "python_version": "3.12.3",
+  "mode": "cycle_aware",
+  "model": "random_forest",
+  "model_path": "models/best_cycle_model.pkl",
+  "features": [
+    "Cycle_Index",
+    "Discharge Time (s)",
+    "Decrement 3.6-3.4V (s)",
+    "Max. Voltage Dischar. (V)",
+    "Min. Voltage Charg. (V)",
+    "Time at 4.15V (s)",
+    "Time constant current (s)",
+    "Charging time (s)"
+  ],
+  "target": "RUL",
+  "holdout_battery": "HNEI_t",
+  "development_rows": 14013,
+  "holdout_rows": 1051,
+  "lightgbm_parameters": {
+    "n_estimators": 400,
+    "learning_rate": 0.03,
+    "num_leaves": 31,
+    "subsample": 0.85,
+    "colsample_bytree": 0.9,
+    "random_state": 42,
+    "verbosity": -1
+  },
+  "dataset_sha256": "1c8e2aada37c6dded1feb21dd4346542bd1d733a9dd85009c5fc0ab32f2c985c",
+  "cv_mean_metrics": {
+    "mae": 5.80235522623803,
+    "rmse": 7.939069207107353,
+    "r2": 0.999156148104064
+  },
+  "holdout_metrics": [
+    {
+      "mode": "cycle_aware",
+      "model": "mean_baseline",
+      "holdout_battery": "HNEI_t",
+      "mae": 277.8018911079103,
+      "rmse": 322.2236159451143,
+      "r2": -0.0006019674811679199
+    },
+    {
+      "mode": "cycle_aware",
+      "model": "random_forest",
+      "holdout_battery": "HNEI_t",
+      "mae": 3.2380697335754407,
+      "rmse": 4.0710720886312375,
+      "r2": 0.999840278196974
+    },
+    {
+      "mode": "cycle_aware",
+      "model": "lightgbm",
+      "holdout_battery": "HNEI_t",
+      "mae": 8.908049788815113,
+      "rmse": 10.931194194092912,
+      "r2": 0.9988484525499409
+    }
+  ]
+}
